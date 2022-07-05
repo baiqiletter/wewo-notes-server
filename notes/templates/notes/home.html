@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'notes/home.css' %}">
+</head>
+<body>
+
+<h1>Home</h1>
+
+{% if user_id %}
+    <p>你好，{{ user_id }}</p>
+    <p>你有这些标签
+    {% for tag in total_tags %}
+        <a href="{% url 'notes:get_notes_with_tag' user_id tag %}">#{{ tag }}</a>，
+    {% endfor %}
+    </p>
+    <p>这里是你的所有笔记：</p>
+    <ul>
+    {% for note in notes %}
+        <li class="note-block">
+            <p class="note-content">{{ note.content }}</p>
+            <p class="note-tags">标签：
+                {% for note_tag in note.tags %}
+                    <a href="{% url 'notes:get_notes_with_tag' user_id note_tag %}">{{ note_tag }}</a>，
+                {% empty %}
+                    当前笔记无标签
+                {% endfor %}
+            </p>
+            <p class="note-links">链接：
+                {% for note_link in note.links %}
+                    <a href="{% url 'notes:note' user_id note_link %}">→{{ note_link }}</a>，
+                {% empty %}
+                    当前笔记无链接
+                {% endfor %}
+            </p>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>未登录</p>
+    <a href="{% url 'notes:register' %}">注册账号</a>
+    <a href="{% url 'notes:login' %}">已有账号，登陆</a>
+{% endif %}
+
+<script type="text/javascript" src="{% static 'notes/home.js' %}"></script>
+
+</body>
+</html>
