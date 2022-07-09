@@ -1,8 +1,6 @@
-# README
+# WEWO 笔记
 
-WEWO 是一款基于 django 和 vue 的 web 笔记应用，是 flomo 的重新实现，功能设计上有不少修改。
-
-支持
+WEWO 是一款基于 django 和 vue 的 web 笔记应用，是 flomo 的重新实现，功能设计上有不少修改。WEWO 支持：
 
 - 基础 markdown 语法
 - 笔记内容搜索
@@ -12,6 +10,7 @@ WEWO 是一款基于 django 和 vue 的 web 笔记应用，是 flomo 的重新�
 - 笔记统计
 
 demo: http://wuud.fun:8000
+
 测试账号:  admin | 123456
 
 ## 环境要求
@@ -43,11 +42,10 @@ DATABASES = {
 }
 ```
 
-3. 本地运行服务端：
+3. 本地运行服务端。如果是 Linux 系统并使用 virtualenv，可以直接运行shell脚本 `run.sh`
 ```
 python manage.py runserver 0.0.0.0:8000
 ```
-如果是 Linux 系统并使用 python virtualenv，可以直接运行shell脚本 `run.sh`
 
 4. 访问网页 `http://localhost:8000/` 或 `http://server.address:8000/`
 
