@@ -41,7 +41,7 @@ def home(request):
         #     'total_tags': total_tags,
         # })
     except MultiValueDictKeyError:
-        return HttpResponse('未登录')
+        return render(request, 'notes/index.html')
 
 
 @require_http_methods(['POST'])
