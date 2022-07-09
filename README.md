@@ -13,6 +13,10 @@ demo: http://wuud.fun:8000
 
 测试账号:  admin | 123456
 
+![](preview.png)
+
+![](preview2.png)
+
 ## 环境要求
 
 - python
