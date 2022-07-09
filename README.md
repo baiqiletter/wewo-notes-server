@@ -1,6 +1,6 @@
-# WEWO 笔记
+# WEWO 笔记（面向对象技术与方法2022大作业）
 
-WEWO 是一款基于 django 和 vue 的 web 笔记应用，是 flomo 的重新实现，功能设计上有不少修改。WEWO 支持：
+WEWO 是一款基于 django 和 vue 的 web 笔记应用，是 flomo 的重新实现，功能上有不少修（shan）改（jian）。WEWO 支持：
 
 - 基础 markdown 语法
 - 笔记内容搜索
@@ -16,6 +16,10 @@ demo: http://wuud.fun:8000
 ![](preview.png)
 
 ![](preview2.png)
+
+## 小组成员
+
+窦义通，张航，李金，马艺展，沈国童，刘伟杰
 
 ## 环境要求
 
