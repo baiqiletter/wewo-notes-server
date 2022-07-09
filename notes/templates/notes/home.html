@@ -14,7 +14,7 @@
     <p>你好，{{ user_id }}</p>
     <p>你有这些标签
     {% for tag in total_tags %}
-        <a href="{% url 'notes:get_notes_with_tag' user_id tag %}">#{{ tag }}</a>，
+        <a href="{% url 'notes:get_notes_with_tag' tag %}">#{{ tag }}</a>，
     {% endfor %}
     </p>
     <p>这里是你的所有笔记：</p>
@@ -24,14 +24,14 @@
             <p class="note-content">{{ note.content }}</p>
             <p class="note-tags">标签：
                 {% for note_tag in note.tags %}
-                    <a href="{% url 'notes:get_notes_with_tag' user_id note_tag %}">{{ note_tag }}</a>，
+                    <a href="{% url 'notes:get_notes_with_tag' note_tag %}">{{ note_tag }}</a>，
                 {% empty %}
                     当前笔记无标签
                 {% endfor %}
             </p>
             <p class="note-links">链接：
                 {% for note_link in note.links %}
-                    <a href="{% url 'notes:note' user_id note_link %}">→{{ note_link }}</a>，
+                    <a href="{% url 'notes:note' note_link %}">→{{ note_link }}</a>，
                 {% empty %}
                     当前笔记无链接
                 {% endfor %}

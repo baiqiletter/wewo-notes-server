@@ -1,6 +1,7 @@
 import json
 
 from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render
 from django.utils.datastructures import MultiValueDictKeyError
 from django.views.decorators.http import require_http_methods
 
@@ -8,6 +9,10 @@ from . import db
 
 
 # Create your views here.
+
+@require_http_methods(['GET'])
+def mine(request):
+    return render(request, 'notes/index.html')
 
 
 @require_http_methods(['GET'])
@@ -29,6 +34,12 @@ def home(request):
             'notes': notes,
             'total_tags': total_tags,
         })
+        # return render(request, 'notes/home.html', {
+        #     'user_id': user_id,
+        #     'user_name': username,
+        #     'notes': notes,
+        #     'total_tags': total_tags,
+        # })
     except MultiValueDictKeyError:
         return HttpResponse('未登录')
 
